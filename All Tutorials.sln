@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tut 02.2 Vertex Colors", "T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tut 03.1 CPU Position Offset", "Tut 03 OpenGLs Moving Triangle\Tut 03.1 CPU Position Offset.csproj", "{95380DE3-6639-452C-9B8D-E288E7A25B95}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tut 03.2 Shader Calc Offset", "Tut 03 OpenGLs Moving Triangle\Tut 03.2 Shader Calc Offset.csproj", "{1AB6E4E7-8214-492F-9089-7FA8A4F958AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tut 03.3 Fragment Change Color", "Tut 03 OpenGLs Moving Triangle\Tut 03.3 Fragment Change Color.csproj", "{8815BB05-397A-4701-A053-E39AB7ACEF18}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{95380DE3-6639-452C-9B8D-E288E7A25B95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95380DE3-6639-452C-9B8D-E288E7A25B95}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95380DE3-6639-452C-9B8D-E288E7A25B95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AB6E4E7-8214-492F-9089-7FA8A4F958AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AB6E4E7-8214-492F-9089-7FA8A4F958AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AB6E4E7-8214-492F-9089-7FA8A4F958AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AB6E4E7-8214-492F-9089-7FA8A4F958AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8815BB05-397A-4701-A053-E39AB7ACEF18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8815BB05-397A-4701-A053-E39AB7ACEF18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8815BB05-397A-4701-A053-E39AB7ACEF18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8815BB05-397A-4701-A053-E39AB7ACEF18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{596942A0-4915-4B05-A341-EB4323CA6FEC}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Tut_02_Fragment_Position</RootNamespace>
-    <AssemblyName>Tut 02 Fragment Position</AssemblyName>
+    <RootNamespace>OpenTKSample</RootNamespace>
+    <AssemblyName>Tut 02 Vertex Colors</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -59,6 +59,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Content Include="data\FragPosition.frag">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
