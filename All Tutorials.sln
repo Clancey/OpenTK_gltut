@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tut 02.1 Fragment Position"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tut 02.2 Vertex Colors", "Tut 02 Playing with Colors\Tut 02.2 Vertex Colors.csproj", "{596942A0-4915-4B05-A341-EB4323CA6FEC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tut 03.1 CPU Position Offset", "Tut 03 OpenGLs Moving Triangle\Tut 03.1 CPU Position Offset.csproj", "{95380DE3-6639-452C-9B8D-E288E7A25B95}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{596942A0-4915-4B05-A341-EB4323CA6FEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{596942A0-4915-4B05-A341-EB4323CA6FEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{596942A0-4915-4B05-A341-EB4323CA6FEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95380DE3-6639-452C-9B8D-E288E7A25B95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95380DE3-6639-452C-9B8D-E288E7A25B95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95380DE3-6639-452C-9B8D-E288E7A25B95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95380DE3-6639-452C-9B8D-E288E7A25B95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

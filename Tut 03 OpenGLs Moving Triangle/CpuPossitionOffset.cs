@@ -8,35 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace OpenTKSample
 {
-    public class MainWindow : GameWindow
+    public class CpuPossitionOffset : GameWindow
     {
-        public MainWindow()
+        public CpuPossitionOffset()
             : base(800, 600, GraphicsMode.Default, "OpenTK Quick Start Sample")
         {
             VSync = VSyncMode.On;
         }
-
        
-        int CreateProgram(List<int> shaderList)
-        {
-            var program = GL.CreateProgram();
-            shaderList.ForEach(x=> GL.AttachShader(program,x));
-
-            GL.LinkProgram(program);
-
-            GL.GetProgram(program, GetProgramParameterName.LinkStatus, out var status);
-            //0 == false
-            if(status == 0)
-            {
-                var log = GL.GetProgramInfoLog(program);
-                Console.WriteLine($"Linker failure: {log}");
-            }
-
-            shaderList.ForEach(x => GL.DetachShader(program, x));
-            return program;
-        }
         int theProgram;
 
 
@@ -44,19 +26,18 @@ namespace OpenTKSample
         {
             var shaders = new List<int>
             {
-                Framework.LoadShader(ShaderType.VertexShader,"FragPosition.vert"),
-                Framework.LoadShader(ShaderType.FragmentShader,"FragPosition.frag"),
+                Framework.LoadShader(ShaderType.VertexShader,"standard.vert"),
+                Framework.LoadShader(ShaderType.FragmentShader,"standard.frag"),
             };
 
-            theProgram = CreateProgram(shaders);
-            shaders.ForEach(GL.DeleteShader);
+            theProgram = Framework.CreateProgram(shaders);
         }
 
         static readonly float[] vertextPositions =
         {
-            0.75f, 0.75f, 0.0f, 1.0f,
-            0.75f, -0.75f, 0.0f, 1.0f,
-            -0.75f, -0.75f, 0.0f, 1.0f,
+            0.25f, 0.25f, 0.0f, 1.0f,
+            0.25f, -0.25f, 0.0f, 1.0f,
+            -0.25f, -0.25f, 0.0f, 1.0f,
         };
 
 
@@ -68,13 +49,9 @@ namespace OpenTKSample
         {
 
             GL.GenBuffers(1, out positionBufferObject);
+
             GL.BindBuffer(BufferTarget.ArrayBuffer, positionBufferObject);
-            GL.BufferData(
-               BufferTarget.ArrayBuffer,
-               (IntPtr)(vertextPositions.Length * sizeof(float)),
-               vertextPositions,
-               BufferUsageHint.StaticDraw
-               );
+            GL.BufferData(BufferTarget.ArrayBuffer, vertextPositions.GetSize(), vertextPositions, BufferUsageHint.StreamDraw );
             GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
         }
 
@@ -89,12 +66,44 @@ namespace OpenTKSample
         }
 
 
+        (float x, float y) ComputePositionOffsets(float x,float y)
+        {
+            const float loopDuration = 5f;
+            const float scale =(3.14159f * 2f / loopDuration);
 
-       
+            var currentTimeThroughLoop = elapsedTime % loopDuration;
+
+            x = (float)Math.Cos(currentTimeThroughLoop * scale) * .5f;
+            y = (float)Math.Sin(currentTimeThroughLoop * scale) * .5f;
+            return (x, y);
+        }
+
+
+        void AdjustVertexData(float x, float y)
+        {
+            var newPos = vertextPositions.ToArray();
+            for(int iVertex = 0; iVertex < vertextPositions.Length; iVertex += 4)
+            {
+                newPos[iVertex] += x;
+                newPos[iVertex + 1] += y;
+            }
+
+            GL.BindBuffer(BufferTarget.ArrayBuffer, positionBufferObject);
+            GL.BufferSubData(BufferTarget.ArrayBuffer, (IntPtr)0, vertextPositions.GetSize(), newPos);
+            GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
+        }
+
+        double elapsedTime;
         protected override void OnRenderFrame(FrameEventArgs e)
         {
             Title = $"(Vsync: {VSync}) FPS: {1f / e.Time:0}";
 
+            elapsedTime += e.Time;
+
+
+            float xOffset = 0, yOffset = 0;
+            var (x, y) = ComputePositionOffsets(xOffset, yOffset);
+            AdjustVertexData(x, y);
 
 
             var backColor = new Color4(0f, 0, 0, 0);
@@ -141,5 +150,18 @@ namespace OpenTKSample
         }
 
 
+    }
+
+
+    static class Program
+    {
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
+        {
+            new CpuPossitionOffset().Run(60);
+        }
     }
 }

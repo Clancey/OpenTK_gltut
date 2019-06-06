@@ -32,5 +32,24 @@ public static class Framework
         return shader;
 
     }
+   public static int CreateProgram(List<int> shaderList)
+    {
+        var program = GL.CreateProgram();
+        shaderList.ForEach(x => GL.AttachShader(program, x));
+
+        GL.LinkProgram(program);
+
+        GL.GetProgram(program, GetProgramParameterName.LinkStatus, out var status);
+        //0 == false
+        if (status == 0)
+        {
+            var log = GL.GetProgramInfoLog(program);
+            Console.WriteLine($"Linker failure: {log}");
+        }
+
+        shaderList.ForEach(x => GL.DetachShader(program, x));
+        shaderList.ForEach(GL.DeleteShader);
+        return program;
+    }
 
 }
