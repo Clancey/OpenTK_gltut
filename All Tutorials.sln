@@ -17,6 +17,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tut 03.2 Shader Calc Offset
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tut 03.3 Fragment Change Color", "Tut 03 OpenGLs Moving Triangle\Tut 03.3 Fragment Change Color.csproj", "{8815BB05-397A-4701-A053-E39AB7ACEF18}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tut 04.1 Ortho Cube", "Tut 04 Objects at Rest\Tut 04.1 Ortho Cube.csproj", "{4DE7E66B-26B0-4114-A893-14DC3FC83E8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tut 04.2 Shader Perspective", "Tut 04 Objects at Rest\Tut 04.2 Shader Perspective.csproj", "{CFA5BC85-25D7-46CF-AEAE-0E7E0803C235}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tut 04.3 Matrix Perspective", "Tut 04 Objects at Rest\Tut 04.3 Matrix Perspective.csproj", "{C097E9AC-45DC-436A-A2C9-624C2C4A7651}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tut 04.4 Aspect Ratio", "Tut 04 Objects at Rest\Tut 04.4 Aspect Ratio.csproj", "{F1A059F8-599A-4D13-8308-26B4B4461541}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +59,22 @@ Global
 		{8815BB05-397A-4701-A053-E39AB7ACEF18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8815BB05-397A-4701-A053-E39AB7ACEF18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8815BB05-397A-4701-A053-E39AB7ACEF18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DE7E66B-26B0-4114-A893-14DC3FC83E8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DE7E66B-26B0-4114-A893-14DC3FC83E8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DE7E66B-26B0-4114-A893-14DC3FC83E8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DE7E66B-26B0-4114-A893-14DC3FC83E8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFA5BC85-25D7-46CF-AEAE-0E7E0803C235}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFA5BC85-25D7-46CF-AEAE-0E7E0803C235}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFA5BC85-25D7-46CF-AEAE-0E7E0803C235}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFA5BC85-25D7-46CF-AEAE-0E7E0803C235}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C097E9AC-45DC-436A-A2C9-624C2C4A7651}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C097E9AC-45DC-436A-A2C9-624C2C4A7651}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C097E9AC-45DC-436A-A2C9-624C2C4A7651}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C097E9AC-45DC-436A-A2C9-624C2C4A7651}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1A059F8-599A-4D13-8308-26B4B4461541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1A059F8-599A-4D13-8308-26B4B4461541}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1A059F8-599A-4D13-8308-26B4B4461541}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1A059F8-599A-4D13-8308-26B4B4461541}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
